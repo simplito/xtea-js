@@ -18,7 +18,6 @@
     "type": "git",
     "url": "https://github.com/simplito/xtea-js.git"
   },
-  "private": true,
   "files": [
     "xtea.js",
     "test/test.js"

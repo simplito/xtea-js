@@ -1,0 +1,36 @@
+{
+  "name": "xtea",
+  "description": "XTEA block cipher implementation (PHP MCRYPT_XTEA compatible) with support for ECB and CBC modes of operation and PKCS7 padding.",
+  "keywords": [
+    "xtea",
+    "cryptography",
+    "encryption",
+    "cipher",
+    "mcrypt"
+  ],
+  "version": "1.0.0",
+  "main": "xtea.js",
+  "author": {
+    "name": "Sebastian Smyczynski",
+    "url": "http://simplito.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simplito/xtea-js.git"
+  },
+  "private": true,
+  "files": [
+    "xtea.js",
+    "test/test.js"
+  ],
+  "dependencies": {
+    "buffer": "^3.5.1"
+  },
+  "devDependencies": {
+    "tape": "^4.2.1"
+  },
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "license": "MIT"
+}

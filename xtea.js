@@ -61,7 +61,7 @@ function decipher_cbc( v, k, iv ) {
 function doBlock( method, block ,key ) {
   var k = new Uint32Array(4);
   var v = new Uint32Array(2);
-  var out = new Buffer(8);
+  var out = Buffer.allocUnsafe(8);
 
   for (var i = 0; i < 4; ++i) {
     k[i] = key.readUInt32BE(i * 4);
@@ -86,7 +86,7 @@ var MODES = {
 function doBlocks( encryption, msg, key, mode, ivbuf, skippad ) {
   mode = mode || 'ecb';
   if (!ivbuf) {
-    ivbuf = new Buffer(8);
+    ivbuf = Buffer.allocUnsafe(8);
     ivbuf.fill(0);
   }
 
@@ -112,7 +112,7 @@ function doBlocks( encryption, msg, key, mode, ivbuf, skippad ) {
     pad = 0;
   }
 
-  var out = new Buffer(length + pad);
+  var out = Buffer.allocUnsafe(length + pad);
   var k = new Uint32Array(4);
   var v = new Uint32Array(2);
   var iv = new Uint32Array(2);
@@ -131,7 +131,7 @@ function doBlocks( encryption, msg, key, mode, ivbuf, skippad ) {
         break;
       }
 
-      var buf = new Buffer( pad );
+      var buf = Buffer.allocUnsafe( pad );
       buf.fill( pad );
 
       buf = Buffer.concat([ msg.slice( offset ), buf ]);

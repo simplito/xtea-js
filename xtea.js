@@ -104,6 +104,9 @@ function doBlocks( encryption, msg, key, mode, ivbuf, skippad ) {
 
   var length = msg.length;
   var pad = 8 - (length & 7);
+  if ( pad == 8 ) {
+	  pad = 0;
+  }
 
   if ( skippad || ! encryption ) {
     if (pad !== 8) {
